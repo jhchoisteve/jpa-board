@@ -5,6 +5,7 @@ import com.example.board.service.BoardService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class BoardController {
@@ -14,6 +15,13 @@ public class BoardController {
     public BoardController(BoardService boardService) {
         this.boardService = boardService;
     }
+
+    @ResponseBody
+    @GetMapping("/hello")
+    public String Hello() {
+        return "hello unittest";
+    }
+
 
     @GetMapping("/")
     public String List() {
