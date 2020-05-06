@@ -28,7 +28,9 @@ public class BoardController {
     @PostMapping("/post")
     public  String write(BoardDto boardDto) {
 
-        boardService.savePost(boardDto);
+        Long id = boardService.savePost(boardDto);
+        System.out.println(id);
+
         return "redirect:/";
     }
 }
