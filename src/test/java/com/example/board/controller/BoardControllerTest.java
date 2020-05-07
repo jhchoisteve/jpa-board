@@ -22,7 +22,7 @@ public class BoardControllerTest {
     MockMvc mockMvc;
 
     @Test
-    public void hello() throws Exception {
+    public void hello요청시_리턴확인값_정상확인() throws Exception {
         mockMvc.perform(get("/hello"))
                 .andExpect(status().isOk())
                 .andExpect(content().string("hello unittest"))
